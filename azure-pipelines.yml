@@ -72,9 +72,8 @@ stages:
     and
     (
       succeeded(),
-      eq(variable['Build.SourceBranchName'], variables['releaseBranchName'])
+      eq(variables['Build.SourceBranchName'], variables['releaseBranchName'])
     )
-
   jobs:
   - deployment: Deploy
     pool:
