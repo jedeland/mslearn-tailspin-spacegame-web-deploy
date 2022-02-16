@@ -74,6 +74,7 @@ stages:
     pool:
       vmImage: 'ubuntu-20.04'
     environment: dev
+    # Random comment!
     variables:
     - group: Release
     strategy:
@@ -136,7 +137,7 @@ stages:
         arguments: '--no-build --configuration $(buildConfiguration)'
         publishTestResults: true
         projects: '$(System.DefaultWorkingDirectory)/**/UITests.csproj'
-        
+
 - stage: 'Staging'
   displayName: 'Deploy to the staging environment'
   dependsOn: Test
